@@ -1,0 +1,9 @@
+.logForm-container{
+    border: solid black 5px;
+    color: black;
+    display: grid;
+    grid-template-columns: 50vw;
+    grid-template-rows: 50vh;
+    margin-left:25%;
+
+}
