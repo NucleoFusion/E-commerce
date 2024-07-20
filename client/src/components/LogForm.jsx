@@ -13,7 +13,6 @@ function LogForm(props){
 
     async function postLogin(e){
         e.preventDefault();
-        console.log($("input[name='username']").val());
         if(logDet.name === "Login"){
             await axios.post('http://localhost:3000/login', {
                 username: $("input[name='username']").val(),
@@ -48,8 +47,18 @@ function LogForm(props){
             setLogDet({
                 name:"Register"
             });
+            $(".text-input").toggle();
             $(".login-heading").text("Register");
             $(".logForm-toggle").text("Login");
+            $(".logForm-input-container").attr("Login");
+        }
+        else if(data.name === "Register"){
+            setLogDet({
+                name:"Login"
+            });
+            $(".text-input").toggle();
+            $(".login-heading").text("Login");
+            $(".logForm-toggle").text("Register");
             $(".logForm-input-container").attr("Login");
         }
     }

@@ -35,3 +35,4 @@ TO SET UP POSTGRES:-
         c. Postgres User => PG_USER
         d. Postgres Port => PG_PORT
         e. Postgres Database => PG_DB
+        f. Session Secret => SESSION_SECRET (set to any string for now)
