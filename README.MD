@@ -29,6 +29,7 @@ TO SET UP POSTGRES:-
             cust_id INT REFERENCES users(id),
             products TEXT
         ); )
+    
     2. Create .env file with environment variables for
         a. Postgres Password => PG_PASS
         b. Postgres Host => PG_HOST
@@ -36,3 +37,11 @@ TO SET UP POSTGRES:-
         d. Postgres Port => PG_PORT
         e. Postgres Database => PG_DB
         f. Session Secret => SESSION_SECRET (set to any string for now)
+
+    3. To run:-
+        1.open up two terminals one to client folder the other to server
+        2. npm index.js in server terminal first
+        3. npm start in client server, react will ask to open in a different port press y for yes
+    
+    To get and post data to server, use axios and url to be https://localhost:3000/{endpoint}
+    To add styles use index.css file

@@ -44,6 +44,13 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.get("/get/products", async (req,res) => {
+  const result = await db.query("SELECT * FROM products");
+  res.json({
+    products: result
+  });
+});
+
 app.post("/login",(req,res)=>{
     passport.authenticate("local",{
         successRedirect: "/success",
