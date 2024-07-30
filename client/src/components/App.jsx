@@ -1,8 +1,20 @@
 import React from "react";
-import LogForm,{postLogin} from "./LogForm"
+import LogForm from "./LogForm"
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import Home from "./Home";
+import Layout from "./Layout";
 
 function App(){
-    return <LogForm name="Login"/>;
+    return (
+        <Router>
+            <Routes>
+                <Route element={<Layout />} >
+                    <Route path='/' element={<LogForm name='Login' />} />
+                    <Route path='/home' element={<Home/>} />
+                </Route>
+            </Routes>
+        </Router>
+    );
 }
 
 export default App;
