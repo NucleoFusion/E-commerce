@@ -51,6 +51,22 @@ app.get("/get/products", async (req,res) => {
   });
 });
 
+app.get('/get/user/:id', async (req,res) => {
+    var id = parseInt(req.params.id);
+    const result = await db.query('SELECT email, username FROM users WHERE id = $1',[id]);
+    const address = await db.query('SELECT address_name,address FROM address WHERE cust_id = $1',[id]);
+    res.json( {
+        userData: result.rows[0],
+        address: address.rows
+    });
+});
+
+app.post('/add/address/:id', async (req,res) => {
+    console.log(req.body);
+    console.log(req.params.id);
+    await db.query('INSERT INTO address (address_name,address,cust_id) VALUES ($1,$2,$3)',[req.body.AddressName,req.body.Address,req.params.id]);
+});
+
 app.post("/login",async (req,res)=>{
     console.log(req.body);
     const password = req.body.password;

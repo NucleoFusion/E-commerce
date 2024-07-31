@@ -1,13 +1,12 @@
-import React, { useEffect } from "react";
-import $ from 'jquery';
-import Carousel from "./Carousel";
-import Cookies from 'js-cookie';
+import React, {useEffect} from "react";
 import { useNavigate } from "react-router-dom";
+import $ from 'jquery';
+import Cookies from 'js-cookie';
 
-function Home(){
+function ComingSoon(){
     const navigate = useNavigate();
 
-    useEffect( ()=>{
+    useEffect(()=>{
         if(Cookies.get('auth') !== 'AUTHENTICATED'){
             navigate('/');
         }
@@ -15,10 +14,10 @@ function Home(){
     },[])
 
     return (
-        <div className="Home-container">
-            <Carousel />
-        </div>
+        <>
+            <h1>COMING SOON</h1>
+        </>
     );
 }
 
-export default Home;
+export default ComingSoon;

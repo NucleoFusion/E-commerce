@@ -1,3 +1,12 @@
+@keyframes fadeIn {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
 body{
   background-color: #FEF3E2;
 
@@ -80,4 +89,119 @@ body{
 
 .navbar{
   background-color: #708871 !important;
+}
+
+.ProfilePage-container{
+  width: 100vw;
+  height: 100vh;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 2fr 2fr;
+
+  gap: 1vh;
+
+  border: solid black 5px;
+}
+
+.ProfilePage-container h2{
+  font-size: 45px;
+  animation: fadeIn 1s;
+
+  height: 100%;
+}
+
+.ProfilePage-container h3{
+  font-size: 30px;
+  animation: fadeIn 1s;
+
+  height: 100%;
+}
+
+.ProfilePage-card-container{
+  width: 100vw;
+  height: 100%;
+
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
+
+  align-items: center;
+  justify-content: center;
+}
+.address-selector-container{
+  width: 100vw;
+  height: 29.2vh;
+
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.Address-para-container{
+  width: 100vw;
+  height: 100%;
+
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.ProfilePage-AddressForm-container{
+  display: grid;
+  grid-template-columns: 50vw 50vw;
+  grid-template-rows: 100%;
+
+  align-self: center;
+  justify-self: center;
+}
+
+.HorizontalCard-container{
+  margin-left: 6.125vw;
+}
+
+.Address-para{
+  align-self: center;
+  justify-self: center;
+
+  width: 50%;
+
+  border: solid black 1px;
+}
+
+.dropdown{
+  align-self: center;
+  justify-self: center;
+}
+
+.span-col-2{
+  grid-column: span 2;
+}
+
+.ProfilePage-button-container{
+  width: 100vw;
+  height: 100%;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.button-define{
+  width: 15vw;
+  height: 5vh;
+
+  align-self: center;
+  justify-self: center;
+
+  margin-left: 2.5vw;
 }
