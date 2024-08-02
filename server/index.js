@@ -19,10 +19,15 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static('public'));
 app.use(cors());
 
-async function getUser(email,username){
-    const user = await db.query("SELECT * FROM users WHERE email = $1 AND username = $2",[email,username]);
-    return user;
-};
+async function getProducts(arr){
+    var array = [];
+    for(let i=0;i<arr.length;i++){
+        const result = await db.query('SELECT * FROM products WHERE id = $1',[parseInt(arr[i])]);
+        var data = result.rows[0];
+        array.push(data);
+    }
+    return array;
+}
 
 const db = new pg.Client({
     user: process.env.PG_USER,
@@ -49,6 +54,19 @@ app.get("/get/products", async (req,res) => {
   res.json({
     products: result
   });
+});
+
+app.get("/get/products/:id", async (req,res) => {
+    const result = await db.query("SELECT * FROM products WHERE id = $1",[req.params.id]);
+    res.json(result.rows[0]);
+  });
+
+app.get('/get/wishlist/:id', async (req,res)=>{
+    let id = parseInt(req.params.id);
+    var wishlist = await db.query('SELECT * FROM wishlist WHERE cust_id = $1',[id]);
+    let wishlistItems = wishlist.rows[0].products.split(':');
+    var wishlistData = await getProducts(wishlistItems);
+    res.json(wishlistData);
 });
 
 app.get('/get/user/:id', async (req,res) => {

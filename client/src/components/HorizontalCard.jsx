@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function HorizontalCard(props){
     return (
@@ -11,7 +12,9 @@ function HorizontalCard(props){
                 <div className="card-body">
                     <h5 className="card-title">{`Your ${props.title}`}</h5>
                     <p className="card-text">{props.descr}</p>
-                    <button type="button" className="btn btn-primary">{`View ${props.title}`}</button>
+                    <Link to={props.route}>
+                        <button type="button" className="btn btn-primary">{`View ${props.title}`}</button>
+                    </Link>
                 </div>
                 </div>
             </div>

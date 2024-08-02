@@ -16,6 +16,8 @@ body{
 
   width: 100vw;
   height: 100vh;
+
+  overflow-x: hidden;
 }
 
 .logForm-container{
@@ -100,8 +102,6 @@ body{
   grid-template-rows: 1fr 1fr 2fr 2fr;
 
   gap: 1vh;
-
-  border: solid black 5px;
 }
 
 .ProfilePage-container h2{
@@ -204,4 +204,43 @@ body{
   justify-self: center;
 
   margin-left: 2.5vw;
+}
+
+.navbar{
+  padding-right: 1vw;
+}
+
+.WishlistProdData-container{
+  width: 70vw;
+
+  display: grid;
+  grid-template-columns: 28vw 42vw;
+  grid-template-rows: 100%;
+
+  margin-left: 13vw;
+}
+
+.WishlistPage-container{
+  width: 100vw;
+
+  display: grid;
+  grid-template-columns: 70vw;
+  grid-template-rows: 40vh;
+
+  padding: 2vw;
+}
+
+.WishlistProdData-details{
+  width: 42vw;
+  height: 100%;
+
+  display: grid;
+  grid-template-columns: 42vw;
+  grid-template-rows: 7.5vh 7.5vh 23vh;
+
+  gap:2vh;
+}
+
+.WishlistProdData-details p{
+  vertical-align: middle;
 }
