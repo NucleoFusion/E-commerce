@@ -19,6 +19,18 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static('public'));
 app.use(cors());
 
+const { Pool } = pg;
+
+const db = new Pool({
+  connectionString: process.env.POSTGRES_URL,
+})
+
+db.connect( (err)=>{
+    if(err) throw err;
+    console.log('Connected to Postgres');
+});
+
+
 async function getProducts(arr){
     var array = [];
     for(let i=0;i<arr.length;i++){
@@ -28,15 +40,6 @@ async function getProducts(arr){
     }
     return array;
 }
-
-const db = new pg.Client({
-    user: process.env.PG_USER,
-    host: process.env.PG_HOST,
-    database: process.env.PG_DB,
-    password: process.env.PG_PASS,
-    port: process.env.PG_PORT,
-});
-db.connect();
 
 app.use(
     session({
