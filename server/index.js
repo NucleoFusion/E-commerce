@@ -69,6 +69,13 @@ app.get('/get/wishlist/:id', async (req,res)=>{
     res.json(wishlistData);
 });
 
+app.get('/get/cart/:id',async (req,res)=>{
+    const result = await db.query('SELECT * FROM cart WHERE cust_id = $1',[parseInt(req.params.id)]);
+    const cartItems = result.rows[0].cart.split(':');
+    const prodArray = await getProducts(cartItems);
+    res.send(prodArray);
+});
+
 app.get('/get/user/:id', async (req,res) => {
     var id = parseInt(req.params.id);
     const result = await db.query('SELECT email, username FROM users WHERE id = $1',[id]);

@@ -6,6 +6,7 @@ import Layout from "./Layout";
 import ProfilePage from "./ProfilePage";
 import ComingSoon from "./ComingSoon";
 import WishlistPage from "./WishlistPage";
+import CartPage from "./CartPage";
 
 function App(){
     return (
@@ -17,6 +18,7 @@ function App(){
                     <Route path='/profile' element={<ProfilePage />}/>
                     <Route path='/comingsoon' element={<ComingSoon />} />
                     <Route path='/wishlist' element={<WishlistPage />} />
+                    <Route path='/cart' element={<CartPage />} />
                 </Route>
             </Routes>
         </Router>

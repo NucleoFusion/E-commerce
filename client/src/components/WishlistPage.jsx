@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import $ from 'jquery';
 import Cookies from 'js-cookie';
 import axios from "axios";
-import WishlistProdData from "./WishlistProdData";
+import CartWishlistProdCard from "./CartWishlistProdCard";
 
 function WishlistPage(){
     const navigate = useNavigate();
@@ -27,8 +27,9 @@ function WishlistPage(){
 
     return (
         <div className="WishlistPage-container">
+            <h1 style={{color:'black', textAlign:'center', width:'100vw'}}>Your Wishlist</h1>
             {wishlistData.map( (obj)=>{
-                return <WishlistProdData name={obj.name} price={obj.price} descr={obj.description} />
+                return <CartWishlistProdCard name={obj.name} price={obj.price} descr={obj.description} />
             })}
         </div>
     );

@@ -66,7 +66,7 @@ function ProfilePage(){
                 <HorizontalCard title='Wishlist' srcImg='./img/icons8-heart-100.png' route='/wishlist'
                 descr="At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias e"
                 />
-                <HorizontalCard title='Cart' srcImg='\img\icons8-shopping-cart-64.png'
+                <HorizontalCard title='Cart' srcImg='\img\icons8-shopping-cart-64.png' route='/cart'
                 descr="At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias e"
                 />
             </div>

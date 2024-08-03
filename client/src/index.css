@@ -210,37 +210,39 @@ body{
   padding-right: 1vw;
 }
 
-.WishlistProdData-container{
-  width: 70vw;
-
-  display: grid;
-  grid-template-columns: 28vw 42vw;
-  grid-template-rows: 100%;
-
-  margin-left: 13vw;
-}
-
-.WishlistPage-container{
+.WishlistPage-container,
+.CartPage-container{
   width: 100vw;
 
   display: grid;
-  grid-template-columns: 70vw;
-  grid-template-rows: 40vh;
+  grid-template-columns: 80vw;
+  grid-template-rows: 5vh 30vh;
+  grid-auto-rows: 30vh;
 
-  padding: 2vw;
+  gap: 2vw;
+
+  color: #FEF3E2;
 }
 
-.WishlistProdData-details{
-  width: 42vw;
+.CartWishlistProdCard-container{
+  width: 80vw;
   height: 100%;
 
-  display: grid;
-  grid-template-columns: 42vw;
-  grid-template-rows: 7.5vh 7.5vh 23vh;
+  background-color: #606676;
 
-  gap:2vh;
+  margin-left: 8vw;
+  
+  display: grid;
+  grid-template-columns: 25vw 50vw;
+  grid-template-rows: 100%;
+  gap: 5vw;
+
+  border-radius: 5px;
 }
 
-.WishlistProdData-details p{
-  vertical-align: middle;
+.CartWishlistProdCard-details{
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 15% 10% 60%;
+  gap: 10%;
 }
