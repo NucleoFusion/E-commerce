@@ -28,7 +28,7 @@ function LogForm(props){
                 alert('One or more field is empty');
                 return;
             }
-            const result = await axios.post('http://localhost:3000/login', {
+            const result = await axios.post('https://e-comm-new.onrender.com/login', {
                 password: $("#Password").val(),
                  email: $("#Email").val()
             },
@@ -53,7 +53,7 @@ function LogForm(props){
                 alert('One or more field is empty');
                 return;
             }
-            const result = await axios.post('http://localhost:3000/register', {
+            const result = await axios.post('https://e-comm-new.onrender.com/register', {
                 username: $("#Username").val(),
                 password: $("#Password").val(),
                  email: $("#Email").val()

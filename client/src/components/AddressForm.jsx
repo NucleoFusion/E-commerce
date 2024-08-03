@@ -14,7 +14,7 @@ function AddressForm(props){
         }
         $('.Address-para-container').show();
         $('.AddressForm').hide();
-        await axios.post(`http://localhost:3000/add/address/${Cookies.get('id')}`,
+        await axios.post(`https://e-comm-new.onrender.com/add/address/${Cookies.get('id')}`,
         {
             AddressName: $('#AddressName').val(),
             Address: $('#Address').val()

@@ -13,7 +13,7 @@ function CartPage(){
 
     useEffect(()=>{
         let getWishlist = async () => {
-            const result = await axios.get(`http://localhost:3000/get/cart/${Cookies.get('id')}`)
+            const result = await axios.get(`https://e-comm-new.onrender.com/get/cart/${Cookies.get('id')}`)
             setCartData(result.data);
         }
         

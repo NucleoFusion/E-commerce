@@ -18,7 +18,7 @@ function ProfilePage(){
         }
         $(".navbar").css('display','block');
         let getUser = async () => {
-            const result = await axios.get(`http://localhost:3000/get/user/${Cookies.get('id')}`);
+            const result = await axios.get(`https://e-comm-new.onrender.com/get/user/${Cookies.get('id')}`);
             setUserData(result.data);
         }
         getUser();
