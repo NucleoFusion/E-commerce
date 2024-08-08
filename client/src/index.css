@@ -1,14 +1,14 @@
 @keyframes fadeIn {
-  0%{
+  0% {
     opacity: 0;
   }
-  100%{
+  100% {
     opacity: 1;
   }
 }
 
-body{
-  background-color: #FEF3E2;
+body {
+  background-color: #fef3e2;
 
   display: grid;
   grid-template-columns: 100%;
@@ -20,11 +20,13 @@ body{
   overflow-x: hidden;
 }
 
-.logForm-container{
+.logForm-container {
   background-color: #708871;
 
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-  
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
   width: 50vw;
   height: 75vh;
 
@@ -35,10 +37,10 @@ body{
   align-items: center;
 }
 
-.logForm-container-element{
+.logForm-container-element {
   width: 100%;
   height: 100%;
-  
+
   padding: 2%;
 
   display: grid;
@@ -47,34 +49,33 @@ body{
   gap: 2%;
 }
 
-
-.logForm-form{
+.logForm-form {
   width: 100%;
   height: 100%;
 
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: repeat(15vh,5);
+  grid-template-rows: repeat(15vh, 5);
 
   justify-content: center;
   align-items: center;
 }
 
-.logForm-submit{
+.logForm-submit {
   align-items: center;
   height: auto;
-  width:75%
+  width: 75%;
 }
 
-.text-center{
+.text-center {
   text-align: center;
 }
 
-#UsernameInput{
+#UsernameInput {
   display: none;
 }
 
-.logForm-toggle-container{
+.logForm-toggle-container {
   width: 100%;
   height: 100%;
 
@@ -85,15 +86,15 @@ body{
   align-items: center;
 }
 
-.logForm-toggle{
+.logForm-toggle {
   margin-left: 12.5%;
 }
 
-.navbar{
+.navbar {
   background-color: #708871 !important;
 }
 
-.ProfilePage-container{
+.ProfilePage-container {
   width: 100vw;
   height: 100vh;
 
@@ -104,21 +105,21 @@ body{
   gap: 1vh;
 }
 
-.ProfilePage-container h2{
+.ProfilePage-container h2 {
   font-size: 45px;
   animation: fadeIn 1s;
 
   height: 100%;
 }
 
-.ProfilePage-container h3{
+.ProfilePage-container h3 {
   font-size: 30px;
   animation: fadeIn 1s;
 
   height: 100%;
 }
 
-.ProfilePage-card-container{
+.ProfilePage-card-container {
   width: 100vw;
   height: 100%;
 
@@ -129,7 +130,7 @@ body{
   align-items: center;
   justify-content: center;
 }
-.address-selector-container{
+.address-selector-container {
   width: 100vw;
   height: 29.2vh;
 
@@ -141,7 +142,7 @@ body{
   justify-content: center;
 }
 
-.Address-para-container{
+.Address-para-container {
   width: 100vw;
   height: 100%;
 
@@ -153,7 +154,7 @@ body{
   justify-content: center;
 }
 
-.ProfilePage-AddressForm-container{
+.ProfilePage-AddressForm-container {
   display: grid;
   grid-template-columns: 50vw 50vw;
   grid-template-rows: 100%;
@@ -162,11 +163,11 @@ body{
   justify-self: center;
 }
 
-.HorizontalCard-container{
+.HorizontalCard-container {
   margin-left: 6.125vw;
 }
 
-.Address-para{
+.Address-para {
   align-self: center;
   justify-self: center;
 
@@ -175,16 +176,16 @@ body{
   border: solid black 1px;
 }
 
-.dropdown{
+.dropdown {
   align-self: center;
   justify-self: center;
 }
 
-.span-col-2{
+.span-col-2 {
   grid-column: span 2;
 }
 
-.ProfilePage-button-container{
+.ProfilePage-button-container {
   width: 100vw;
   height: 100%;
 
@@ -196,7 +197,7 @@ body{
   align-items: center;
 }
 
-.button-define{
+.button-define {
   width: 15vw;
   height: 5vh;
 
@@ -206,12 +207,12 @@ body{
   margin-left: 2.5vw;
 }
 
-.navbar{
+.navbar {
   padding-right: 1vw;
 }
 
 .WishlistPage-container,
-.CartPage-container{
+.CartPage-container {
   width: 100vw;
 
   display: grid;
@@ -221,17 +222,17 @@ body{
 
   gap: 2vw;
 
-  color: #FEF3E2;
+  color: #fef3e2;
 }
 
-.CartWishlistProdCard-container{
+.CartWishlistProdCard-container {
   width: 80vw;
   height: 100%;
 
   background-color: #606676;
 
   margin-left: 8vw;
-  
+
   display: grid;
   grid-template-columns: 25vw 50vw;
   grid-template-rows: 100%;
@@ -240,9 +241,78 @@ body{
   border-radius: 5px;
 }
 
-.CartWishlistProdCard-details{
+.CartWishlistProdCard-details {
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: 15% 10% 60%;
   gap: 10%;
+}
+
+.ProductCard-container {
+  height: 40vh;
+  width: 15vw;
+
+  display: grid;
+  grid-template-columns: 15vw;
+  grid-template-rows: 16vh 24vh;
+
+  border-radius: 5px;
+}
+
+.ProductCard-container img {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.ProductCard-details {
+  background-color: #606676;
+  color: #fef3e2;
+
+  padding: 3%;
+
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 20% 15% 55%;
+  gap: 5%;
+}
+
+.ProductTypeCard-container {
+  margin-left: 2.5vw;
+}
+
+.ProductTypeCard-showcase {
+  height: 50vh;
+  width: 95vw;
+
+  margin-top: 5vh;
+
+  display: grid;
+  grid-template-columns: 15vw 15vw;
+  grid-auto-columns: 15vw;
+  grid-template-rows: 40vh;
+
+  gap: 1vw;
+
+  grid-auto-flow: column;
+}
+
+.ProductTypeCard-header {
+  width: 95vw;
+  height: 7.5vh;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 100%;
+
+  position: relative;
+}
+
+.ProductTypeCard-header button {
+  width: 7.5vw;
+  height: 7.5vh;
+  position: absolute;
+  right: 0;
+
+  background-color: transparent;
+  margin: none;
 }
