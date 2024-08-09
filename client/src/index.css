@@ -257,6 +257,8 @@ body {
   grid-template-rows: 16vh 24vh;
 
   border-radius: 5px;
+
+  position: relative;
 }
 
 .ProductCard-container img {
@@ -272,7 +274,7 @@ body {
 
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: 20% 15% 55%;
+  grid-template-rows: 20% 15% 35% 20%;
   gap: 5%;
 }
 
@@ -315,4 +317,23 @@ body {
 
   background-color: transparent;
   margin: none;
+}
+
+.wishlist-button {
+  background-color: transparent;
+  border: none;
+}
+
+.wishlist-button img {
+  width: 2vw;
+  height: 2vw;
+}
+
+.wishlist-button-container {
+  position: absolute;
+
+  top: 0.1vw;
+  right: 0.1vh;
+
+  z-index: 1;
 }

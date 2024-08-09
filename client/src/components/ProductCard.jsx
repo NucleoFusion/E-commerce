@@ -10,9 +10,33 @@ function ProductCard(props) {
         />
       </div>
       <div className="ProductCard-details">
-        <h3>{props.name}</h3>
+        <h4>{props.name}</h4>
         <h5>{props.price}</h5>
         <p>{props.description}</p>
+        <div>
+          <span>
+            <button>View Product</button>
+          </span>
+          <span style={{ marginLeft: "1vw" }}>
+            <button>
+              <img
+                src="./img/icons8-shopping-cart-64.png"
+                alt="cart"
+                style={{ width: "1vw", height: "1vw" }}
+              />
+              Add To Cart
+            </button>
+          </span>
+        </div>
+      </div>
+      <div className="wishlist-button-container">
+        <button className="wishlist-button">
+          <img
+            src="./img/icons8-heart-50 (1).png"
+            className="wishlist-heart"
+            alt="heart"
+          />
+        </button>
       </div>
     </div>
   );
