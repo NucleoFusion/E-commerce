@@ -1,7 +1,6 @@
 import express from "express";
 import session from "express-session";
 import passport from "passport";
-import bcrypt from "bcrypt";
 import bodyParser from "body-parser";
 import env from "dotenv";
 import cors from "cors";

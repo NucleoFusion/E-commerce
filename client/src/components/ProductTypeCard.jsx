@@ -8,7 +8,7 @@ function ProductTypeCard(props) {
   useEffect(() => {
     const getData = async () => {
       const result = await axios.get(
-        `http://localhost:3000/get/products/${props.type}`
+        `${process.env.REACT_APP_BASE_URL}get/products/${props.type}`
       );
       setProducts(await result.data);
     };
