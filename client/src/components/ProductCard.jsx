@@ -1,6 +1,15 @@
+import axios from "axios";
 import React from "react";
 
 function ProductCard(props) {
+  async function addToCart() {
+    await axios.post(
+      `${process.env.REACT_APP_BASE_URL}add/toCart/${props.data.id}`,
+      {}
+    );
+    alert("Added");
+  }
+
   return (
     <div className="ProductCard-container">
       <div className="ProductCard-img">
@@ -18,7 +27,7 @@ function ProductCard(props) {
             <button>View Product</button>
           </span>
           <span style={{ marginLeft: "1vw" }}>
-            <button>
+            <button onClick={addToCart}>
               <img
                 src="./img/icons8-shopping-cart-64.png"
                 alt="cart"

@@ -30,6 +30,7 @@ function ProductTypeCard(props) {
         {products.map((obj) => {
           return (
             <ProductCard
+              data={obj}
               name={obj.name}
               price={obj.price}
               description={obj.description}

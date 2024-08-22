@@ -31,12 +31,21 @@ async function getProducts(arr) {
   return array;
 }
 
-const { Pool } = pg;
-const db = new Pool({
-  connectionString: process.env.POSTGRES_URL,
-});
-db.connect((err) => {
-  if (err) console.log(err);
+const config = {
+  user: process.env.PG_USER,
+  password: process.env.PG_PASS,
+  host: process.env.PG_HOST,
+  port: 12696,
+  database: "e-comms",
+  ssl: {
+    rejectUnauthorized: true,
+    ca: process.env.CA,
+  },
+};
+
+const db = new pg.Client(config);
+db.connect(function (err) {
+  if (err) throw err;
   console.log("Connected");
 });
 
@@ -110,12 +119,16 @@ app.get("/get/user/:id", async (req, res) => {
 });
 
 app.post("/add/address/:id", async (req, res) => {
-  console.log(req.body);
-  console.log(req.params.id);
   await db.query(
     "INSERT INTO address (address_name,address,cust_id) VALUES ($1,$2,$3)",
     [req.body.AddressName, req.body.Address, req.params.id]
   );
+});
+
+app.post("/add/toCart/:id", (req, res) => {
+  const id = req.params.id;
+  console.log(id);
+  res.sendStatus(200);
 });
 
 app.post("/login", async (req, res) => {
