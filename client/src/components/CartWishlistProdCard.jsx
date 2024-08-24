@@ -11,8 +11,8 @@ function CartWishlistProdCard(props) {
       <div className="CartWishlistProdCard-details">
         <h3>Name: {props.name}</h3>
         <h4>Price: {props.price}</h4>
-        <h4>Qty: {props.qty}</h4>
-        <p style={{ color: "white" }}>{props.data.prodData.description}</p>
+        {props.type === "wishlist" ? <></> : <h4>Qty: {props.qty}</h4>}
+        <p style={{ color: "white" }}>{props.descr}</p>
       </div>
     </div>
   );

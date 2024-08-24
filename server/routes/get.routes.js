@@ -25,15 +25,25 @@ router.get("/cart/:id", async (req, res) => {
   res.send(data);
 });
 
-// router.get("/cart/:id", async (req, res) => {
-//   const result = await res.locals.db.query(
-//     "SELECT * FROM cart WHERE cust_id = $1",
-//     [parseInt(req.params.id)]
-//   );
-//   const cartItems = result.rows[0].cart.split(":");
-//   const prodArray = await getProducts(cartItems, res.locals.db);
-//   res.send(prodArray);
-// });
+router.get("/wishlist/:id", async (req, res) => {
+  let id = +req.params.id;
+  const wishlist_res = await res.locals.db.query(
+    "SELECT * FROM wishlist WHERE cust_id = $1",
+    [id]
+  );
+  const wishlistData = JSON.parse(wishlist_res.rows[0].products);
+
+  var data = [];
+
+  for (let i = 0; i < wishlistData.length; i++) {
+    const result = await res.locals.db.query(
+      "SELECT * FROM products WHERE id = $1",
+      [+wishlistData[i]]
+    );
+    data.push(result.rows[0]);
+  }
+  res.send(data);
+});
 
 router.get("/user/:id", async (req, res) => {
   var id = parseInt(req.params.id);

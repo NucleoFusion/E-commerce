@@ -34,6 +34,8 @@ function WishlistPage() {
       {wishlistData.map((obj) => {
         return (
           <CartWishlistProdCard
+            type="wishlist"
+            data={obj}
             name={obj.name}
             price={obj.price}
             descr={obj.description}

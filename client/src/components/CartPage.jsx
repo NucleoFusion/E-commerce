@@ -26,8 +26,6 @@ function CartPage() {
     getWishlist();
   }, []);
 
-  console.log(cartData);
-
   return (
     <div className="CartPage-container">
       <h1 style={{ color: "black", textAlign: "center", width: "100vw" }}>
