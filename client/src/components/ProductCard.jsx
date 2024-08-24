@@ -1,13 +1,40 @@
 import axios from "axios";
 import React from "react";
+import Cookies from "js-cookie";
 
 function ProductCard(props) {
   async function addToCart() {
     await axios.post(
       `${process.env.REACT_APP_BASE_URL}add/toCart/${props.data.id}`,
-      {}
+      {
+        cust_id: Cookies.get("id"),
+      },
+      {
+        headers: {
+          "content-type": "application/x-www-form-urlencoded",
+        },
+      }
     );
     alert("Added");
+  }
+
+  async function addToWishlist() {
+    const result = await axios.post(
+      `${process.env.REACT_APP_BASE_URL}add/toWishlist/${props.data.id}`,
+      {
+        cust_id: Cookies.get("id"),
+      },
+      {
+        headers: {
+          "content-type": "application/x-www-form-urlencoded",
+        },
+      }
+    );
+    if (result.data.message) {
+      alert(result.data.message);
+    } else {
+      alert("Added");
+    }
   }
 
   return (
@@ -39,7 +66,7 @@ function ProductCard(props) {
         </div>
       </div>
       <div className="wishlist-button-container">
-        <button className="wishlist-button">
+        <button className="wishlist-button" onClick={addToWishlist}>
           <img
             src="./img/icons8-heart-50 (1).png"
             className="wishlist-heart"

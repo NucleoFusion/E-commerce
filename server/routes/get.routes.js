@@ -1,38 +1,39 @@
 import express from "express";
 const router = express.Router();
 
-async function getProducts(arr) {
-  var array = [];
-  for (let i = 0; i < arr.length; i++) {
-    const result = await db.query("SELECT * FROM products WHERE id = $1", [
-      parseInt(arr[i]),
-    ]);
-    var data = result.rows[0];
-    array.push(data);
-  }
-  return array;
-}
-
-router.get("/wishlist/:id", async (req, res) => {
-  let id = parseInt(req.params.id);
-  var wishlist = await res.locals.db.query(
-    "SELECT * FROM wishlist WHERE cust_id = $1",
+router.get("/cart/:id", async (req, res) => {
+  let id = +req.params.id;
+  const cart_res = await res.locals.db.query(
+    "SELECT * FROM cart WHERE cust_id = $1",
     [id]
   );
-  let wishlistItems = wishlist.rows[0].products.split(":");
-  var wishlistData = await getProducts(wishlistItems);
-  res.json(wishlistData);
+  const cartData = JSON.parse(cart_res.rows[0].cart);
+
+  var data = [];
+
+  for (let key in cartData) {
+    const result = await res.locals.db.query(
+      "SELECT * FROM products WHERE id = $1",
+      [+key]
+    );
+    data.push({
+      prodData: result.rows[0],
+      qty: +cartData[key],
+    });
+  }
+
+  res.send(data);
 });
 
-router.get("/cart/:id", async (req, res) => {
-  const result = await res.locals.db.query(
-    "SELECT * FROM cart WHERE cust_id = $1",
-    [parseInt(req.params.id)]
-  );
-  const cartItems = result.rows[0].cart.split(":");
-  const prodArray = await getProducts(cartItems);
-  res.send(prodArray);
-});
+// router.get("/cart/:id", async (req, res) => {
+//   const result = await res.locals.db.query(
+//     "SELECT * FROM cart WHERE cust_id = $1",
+//     [parseInt(req.params.id)]
+//   );
+//   const cartItems = result.rows[0].cart.split(":");
+//   const prodArray = await getProducts(cartItems, res.locals.db);
+//   res.send(prodArray);
+// });
 
 router.get("/user/:id", async (req, res) => {
   var id = parseInt(req.params.id);

@@ -244,7 +244,7 @@ body {
 .CartWishlistProdCard-details {
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: 15% 10% 60%;
+  grid-template-rows: 15% 10% 10% 50%;
   gap: 10%;
 }
 

@@ -36,9 +36,11 @@ function CartPage() {
       {cartData.map((obj) => {
         return (
           <CartWishlistProdCard
-            name={obj.name}
-            price={obj.price}
-            descr={obj.description}
+            data={obj}
+            name={obj.prodData.name}
+            price={obj.prodData.price}
+            qty={obj.qty}
+            descr={obj.prodData.description}
           />
         );
       })}

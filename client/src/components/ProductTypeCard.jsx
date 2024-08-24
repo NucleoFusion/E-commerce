@@ -15,8 +15,6 @@ function ProductTypeCard(props) {
     getData();
   }, [props]);
 
-  console.log(products);
-
   return (
     <div className="ProductTypeCard-container">
       <div className="ProductTypeCard-header">
