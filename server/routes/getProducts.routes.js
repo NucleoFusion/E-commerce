@@ -4,7 +4,7 @@ const router = express.Router();
 router.get("/", async (req, res) => {
   const result = await res.locals.db.query("SELECT * FROM products");
   res.json({
-    products: result,
+    products: result.rows,
   });
 });
 

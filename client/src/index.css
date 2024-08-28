@@ -337,3 +337,60 @@ body {
 
   z-index: 1;
 }
+
+.SearchPage {
+  margin: 2vw 2vh;
+
+  height: auto;
+  min-height: 85vh;
+
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 1fr;
+}
+
+.SearchPage > div {
+  border: solid black 1px;
+  padding: 0.75vw;
+}
+
+.SearchPage > div:first-child {
+  border-right: none;
+}
+
+.SearchPage > div > h1 {
+  text-align: center;
+}
+
+.FilterSection > div {
+  height: 60vh;
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+
+  gap: 4vh;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.FilterSection > div > select {
+  max-height: 5vh;
+}
+
+.SearchCard {
+  width: 100%;
+  height: 30vh;
+  max-height: 30vh;
+  border: solid black 1px;
+
+  padding: 1vw;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+
+  margin-bottom: 2vh;
+}

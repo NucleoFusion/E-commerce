@@ -1,0 +1,14 @@
+{
+  "price": [
+    { "name": "Greater than 500", "value": 500 },
+    { "name": "Greater than 5000", "value": 5000 },
+    { "name": "Greater than 25000", "value": 25000 },
+    { "name": "Greater than 50000", "value": 50000 }
+  ],
+  "type": [
+    { "name": "Tech Products", "value": "tech" },
+    { "name": "Furniture Products", "value": "furniture" },
+    { "name": "Tools", "value": "tools" },
+    { "name": "Edible Products", "value": "food" }
+  ]
+}
