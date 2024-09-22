@@ -2,7 +2,7 @@ import express from "express";
 const router = express.Router();
 
 router.get("/", async (req, res) => {
-  const result = await res.locals.db.query("SELECT * FROM products");
+  const result = await req.db.query("SELECT * FROM products");
   res.json({
     products: result.rows,
   });
@@ -10,7 +10,7 @@ router.get("/", async (req, res) => {
 
 router.get("/:type", async (req, res) => {
   const type = req.params.type;
-  const result = await res.locals.db.query(
+  const result = await req.db.query(
     "SELECT * FROM products WHERE product_type = $1 LIMIT 6",
     [type]
   );
@@ -18,10 +18,9 @@ router.get("/:type", async (req, res) => {
 });
 
 router.get("/byId/:id", async (req, res) => {
-  const result = await res.locals.db.query(
-    "SELECT * FROM products WHERE id = $1",
-    [req.params.id]
-  );
+  const result = await req.db.query("SELECT * FROM products WHERE id = $1", [
+    req.params.id,
+  ]);
   res.json(result.rows[0]);
 });
 

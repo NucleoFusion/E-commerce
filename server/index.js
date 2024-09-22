@@ -5,21 +5,20 @@ import bodyParser from "body-parser";
 import env from "dotenv";
 import cors from "cors";
 
-import connectPG from "./database/db.js";
+import pool from "./database/db.js";
 import getProductsRouter from "./routes/getProducts.routes.js";
 import addRouter from "./routes/add.routes.js";
 import getRouter from "./routes/get.routes.js";
 import authRouter from "./routes/auth.router.js";
 
 const app = express();
-env.config();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.use(cors());
 
 const pgMiddleware = (req, res, next) => {
-  res.locals.db = connectPG();
+  req.db = pool;
   next();
 };
 app.use(pgMiddleware);

@@ -1,26 +1,16 @@
 import pg from "pg";
 import env from "dotenv";
 
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+
+const { Client } = pg;
+
 env.config();
 
-export default function connectPG() {
-  const config = {
-    user: process.env.PG_USER,
-    password: process.env.PG_PASS,
-    host: process.env.PG_HOST,
-    port: 12696,
-    database: "e-comms",
-    ssl: {
-      rejectUnauthorized: true,
-      ca: process.env.CA,
-    },
-  };
+// const uri = process.env.PG_URI;
 
-  const db = new pg.Client(config);
-  db.connect(function (err) {
-    if (err) throw err;
-    console.log("Connected");
-  });
+const client = new Client();
+await client.connect();
+console.log("CONNECTED");
 
-  return db;
-}
+export default client;

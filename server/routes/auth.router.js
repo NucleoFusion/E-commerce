@@ -8,10 +8,9 @@ router.post("/login", async (req, res) => {
   console.log(req.body);
   const password = req.body.password;
   const email = req.body.email;
-  const result = await res.locals.db.query(
-    "SELECT * FROM users WHERE email = $1 ",
-    [email]
-  );
+  const result = await req.db.query("SELECT * FROM users WHERE email = $1 ", [
+    email,
+  ]);
   if (result.rows.length === 0) {
     res.json({
       auth: "USER NOT FOUND",
@@ -42,10 +41,9 @@ router.post("/register", async (req, res) => {
   const username = req.body.username;
   const password = req.body.password;
   const email = req.body.email;
-  const result = await res.locals.db.query(
-    "SELECT * FROM users WHERE email = $1",
-    [email]
-  );
+  const result = await req.db.query("SELECT * FROM users WHERE email = $1", [
+    email,
+  ]);
   if (result.rows.length > 0) {
     res.send({
       auth: "USERNAME EXISTS",
@@ -53,7 +51,7 @@ router.post("/register", async (req, res) => {
   } else {
     bcrypt.hash(password, saltRounds, async (err, hash) => {
       if (err) console.log("ERROR hashing", err);
-      const result = await res.locals.db.query(
+      const result = await req.db.query(
         "INSERT INTO users (username, password, email) VALUES ($1, $2, $3) RETURNING *",
         [username, hash, email]
       );
