@@ -4,14 +4,20 @@ import FilterDropdown from "./FilterDropdown";
 import SearchCard from "./SearchCard";
 import axios from "axios";
 import $ from "jquery";
+import { useParams, useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
 
-export default function SearchPage() {
+export default function SearchPage(props) {
+  const { type } = useParams();
+
   function handleChange(id) {
     setFilters({
       ...filters,
       [id]: $(`select[name='${id}'] option:selected`).val(),
     });
   }
+
+  const navigate = useNavigate();
 
   const [filters, setFilters] = useState({
     price: "NA",
@@ -49,6 +55,9 @@ export default function SearchPage() {
   }, [filters, data.allData, setData]);
 
   useEffect(() => {
+    if (!Cookies.get("id")) {
+      navigate("/");
+    }
     const getData = async () => {
       const result = await axios.get(
         `${process.env.REACT_APP_BASE_URL}get/products/`
@@ -60,6 +69,29 @@ export default function SearchPage() {
     };
     getData();
   }, []);
+
+  // useEffect(() => {
+
+  // }, []);
+
+  useEffect(() => {
+    if (props.type === true) {
+      if (
+        type === "tech" ||
+        type === "furniture" ||
+        type === "tools" ||
+        type === "food"
+      ) {
+        setFilters({
+          price: "NA",
+          type: type,
+        });
+        $('input[name="type"]').val("type").change();
+      } else {
+        navigate("/search");
+      }
+    }
+  }, [setFilters]);
 
   console.log(filters);
   console.log(data);

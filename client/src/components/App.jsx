@@ -21,6 +21,7 @@ function App() {
           <Route path="/wishlist" element={<WishlistPage />} />
           <Route path="/cart" element={<CartPage />} />
           <Route path="/search" element={<SearchPage />} />
+          <Route path="/search/:type" element={<SearchPage type={true} />} />
         </Route>
       </Routes>
     </Router>
