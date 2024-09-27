@@ -15,7 +15,11 @@ function WishlistPage() {
       const result = await axios.get(
         `${process.env.REACT_APP_BASE_URL}get/wishlist/${Cookies.get("id")}`
       );
-      setWishlistData(result.data);
+      if (result.data === "NA") {
+        setWishlistData([]);
+      } else {
+        setWishlistData(result.data);
+      }
     };
 
     if (Cookies.get("auth") !== "AUTHENTICATED") {

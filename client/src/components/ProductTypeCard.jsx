@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 function ProductTypeCard(props) {
   const [products, setProducts] = useState([]);
@@ -19,10 +20,12 @@ function ProductTypeCard(props) {
     <div className="ProductTypeCard-container">
       <div className="ProductTypeCard-header">
         <h2>{props.title}</h2>
-        <button>
-          View More
-          <img />
-        </button>
+        <Link to={`/search/${props.type}`}>
+          <button>
+            View More
+            <img />
+          </button>
+        </Link>
       </div>
       <div className="ProductTypeCard-showcase">
         {products.map((obj) => {

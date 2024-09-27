@@ -29,6 +29,12 @@ router.get("/wishlist/:id", async (req, res) => {
     "SELECT * FROM wishlist WHERE cust_id = $1",
     [id]
   );
+
+  if (!wishlist_res[0]) {
+    res.send("NA");
+    return;
+  }
+
   const wishlistData = JSON.parse(wishlist_res.rows[0].products);
 
   var data = [];

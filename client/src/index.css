@@ -422,3 +422,7 @@ body {
 
   margin-bottom: 2vh;
 }
+
+#nav-ul > button {
+  text-decoration: none !important;
+}
