@@ -1,6 +1,7 @@
 import axios from "axios";
 import React from "react";
 import Cookies from "js-cookie";
+import { Link } from "react-router-dom";
 
 function ProductCard(props) {
   async function addToCart() {
@@ -51,7 +52,9 @@ function ProductCard(props) {
         <p>{props.description}</p>
         <div>
           <span>
-            <button>View Product</button>
+            <Link to={`/product/${props.data.id}`}>
+              <button>View Product</button>
+            </Link>
           </span>
           <span style={{ marginLeft: "1vw" }}>
             <button onClick={addToCart}>

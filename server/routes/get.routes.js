@@ -30,19 +30,23 @@ router.get("/wishlist/:id", async (req, res) => {
     [id]
   );
 
-  if (!wishlist_res[0]) {
+  if (!wishlist_res.rows[0]) {
     res.send("NA");
     return;
   }
 
   const wishlistData = JSON.parse(wishlist_res.rows[0].products);
 
+  // console.log(wishlistData);
+
   var data = [];
 
-  for (let i = 0; i < wishlistData.length; i++) {
+  for (let i = 0; i < wishlistData.products.length; i++) {
     const result = await req.db.query("SELECT * FROM products WHERE id = $1", [
-      +wishlistData[i],
+      +wishlistData.products[i],
     ]);
+    // console.log(result.rows);
+
     data.push(result.rows[0]);
   }
   res.send(data);

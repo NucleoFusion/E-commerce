@@ -8,6 +8,7 @@ import ComingSoon from "./ComingSoon";
 import WishlistPage from "./WishlistPage";
 import CartPage from "./CartPage";
 import SearchPage from "./SearchPage";
+import ProductPage from "./ProductPage";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/cart" element={<CartPage />} />
           <Route path="/search" element={<SearchPage />} />
           <Route path="/search/:type" element={<SearchPage type={true} />} />
+          <Route path="/product/:id" element={<ProductPage />} />
         </Route>
       </Routes>
     </Router>

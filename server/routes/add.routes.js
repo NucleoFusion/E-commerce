@@ -72,12 +72,14 @@ router.post("/toWishlist/:id", async (req, res) => {
   } else {
     const items = JSON.parse(result.rows[0].products);
 
-    if (items.indexOf(`${id}`) >= 0) {
+    console.log(result.rows[0].products);
+
+    if (items.products.includes(id)) {
       res.json({
         message: "Already Wishlist-ed",
       });
     } else {
-      items.push(id);
+      items.products.push(id);
 
       await req.db.query("UPDATE wishlist SET products = $1 WHERE id = $2", [
         JSON.stringify(items),

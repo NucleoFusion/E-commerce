@@ -15,6 +15,8 @@ function WishlistPage() {
       const result = await axios.get(
         `${process.env.REACT_APP_BASE_URL}get/wishlist/${Cookies.get("id")}`
       );
+      console.log(result);
+
       if (result.data === "NA") {
         setWishlistData([]);
       } else {
@@ -40,9 +42,9 @@ function WishlistPage() {
           <CartWishlistProdCard
             type="wishlist"
             data={obj}
-            name={obj.name}
-            price={obj.price}
-            descr={obj.description}
+            name={obj.name ? obj.name : "loading"}
+            price={obj.price ? obj.price : "loading"}
+            descr={obj.description ? obj.description : "loading"}
           />
         );
       })}
