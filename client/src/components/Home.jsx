@@ -4,6 +4,7 @@ import Carousel from "./Carousel";
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
 import ProductTypeCard from "./ProductTypeCard";
+import styles from "./Home.module.css";
 
 function Home() {
   const navigate = useNavigate();
@@ -16,7 +17,7 @@ function Home() {
   }, []);
 
   return (
-    <div className="Home-container">
+    <div className={styles.HomeContainer}>
       <br />
       <br />
       <br />
@@ -24,11 +25,8 @@ function Home() {
       <br />
       <br />
       <br />
-      <div className="HomePage-product-showcase">
+      <div className={styles.HomePageProductShowcase}>
         <h1> View Products</h1>
-        <br />
-        <br />
-        <br />
         <ProductTypeCard title="Tech Products" type="tech" />
         <ProductTypeCard title="Furniture Products" type="furniture" />
         <ProductTypeCard title="Tools" type="tools" />

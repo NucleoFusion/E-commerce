@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import styles from "./Home.module.css";
 
 function ProductTypeCard(props) {
   const [products, setProducts] = useState([]);
@@ -17,25 +18,29 @@ function ProductTypeCard(props) {
   }, [props]);
 
   return (
-    <div className="ProductTypeCard-container">
-      <div className="ProductTypeCard-header">
+    <div className={styles.ProductTypeCardContainer}>
+      <div className={styles.ProductTypeCardHeader}>
         <h2>{props.title}</h2>
-        <Link to={`/search/${props.type}`}>
-          <button>
-            View More
-            <img />
-          </button>
-        </Link>
+        <div>
+          <Link to={`/search/${props.type}`}>
+            <button>
+              View More
+              <img />
+            </button>
+          </Link>
+        </div>
       </div>
-      <div className="ProductTypeCard-showcase">
-        {products.map((obj) => {
+      <div className={styles.ProductTypeCardShowcase}>
+        {products.slice(0, 5).map((obj) => {
           return (
-            <ProductCard
-              data={obj}
-              name={obj.name}
-              price={obj.price}
-              description={obj.description}
-            />
+            <div>
+              <ProductCard
+                data={obj}
+                name={obj.name}
+                price={obj.price}
+                description={obj.description}
+              />
+            </div>
           );
         })}
       </div>

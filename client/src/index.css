@@ -8,7 +8,7 @@
 }
 
 body {
-  background-color: #fef3e2;
+  background-color: #e9ecef;
 
   display: grid;
   grid-template-columns: 100%;
@@ -91,7 +91,7 @@ body {
 }
 
 .navbar {
-  background-color: #708871 !important;
+  background-color: #6c757d !important;
 }
 
 .ProfilePage-container {
@@ -302,96 +302,6 @@ body {
 .prod-container-cart > div {
   background-color: #606676;
   padding: 1vh 1vw;
-}
-
-.ProductCard-container {
-  height: 40vh;
-  width: 15vw;
-
-  display: grid;
-  grid-template-columns: 15vw;
-  grid-template-rows: 16vh 24vh;
-
-  border-radius: 5px;
-
-  position: relative;
-}
-
-.ProductCard-container img {
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-}
-
-.ProductCard-details {
-  background-color: #606676;
-  color: #fef3e2;
-
-  padding: 3%;
-
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: 20% 15% 35% 20%;
-  gap: 5%;
-}
-
-.ProductTypeCard-container {
-  margin-left: 2.5vw;
-}
-
-.ProductTypeCard-showcase {
-  height: 50vh;
-  width: 95vw;
-
-  margin-top: 5vh;
-
-  display: grid;
-  grid-template-columns: 15vw 15vw;
-  grid-auto-columns: 15vw;
-  grid-template-rows: 40vh;
-
-  gap: 1vw;
-
-  grid-auto-flow: column;
-}
-
-.ProductTypeCard-header {
-  width: 95vw;
-  height: 7.5vh;
-
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 100%;
-
-  position: relative;
-}
-
-.ProductTypeCard-header button {
-  width: 7.5vw;
-  height: 7.5vh;
-  position: absolute;
-  right: 0;
-
-  background-color: transparent;
-  margin: none;
-}
-
-.wishlist-button {
-  background-color: transparent;
-  border: none;
-}
-
-.wishlist-button img {
-  width: 2vw;
-  height: 2vw;
-}
-
-.wishlist-button-container {
-  position: absolute;
-
-  top: 0.1vw;
-  right: 0.1vh;
-
-  z-index: 1;
 }
 
 .SearchPage {

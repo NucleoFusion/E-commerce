@@ -2,6 +2,7 @@ import axios from "axios";
 import React from "react";
 import Cookies from "js-cookie";
 import { Link } from "react-router-dom";
+import styles from "./Home.module.css";
 
 function ProductCard(props) {
   async function addToCart() {
@@ -39,16 +40,16 @@ function ProductCard(props) {
   }
 
   return (
-    <div className="ProductCard-container">
-      <div className="ProductCard-img">
+    <div className={styles.ProductCardContainer}>
+      <div className={styles.ProductCardImg}>
         <img
           src="./img/prod_img.jpg"
           style={{ width: "100%", height: "100%" }}
         />
       </div>
-      <div className="ProductCard-details">
+      <div className={styles.ProductCardDetails}>
         <h4>{props.name}</h4>
-        <h5>{props.price}</h5>
+        <h5>$ {props.price}</h5>
         <p>{props.description}</p>
         <div>
           <span>
@@ -58,21 +59,21 @@ function ProductCard(props) {
           </span>
           <span style={{ marginLeft: "1vw" }}>
             <button onClick={addToCart}>
-              <img
+              {/* <img
                 src="./img/icons8-shopping-cart-64.png"
                 alt="cart"
                 style={{ width: "1vw", height: "1vw" }}
-              />
+              /> */}
               Add To Cart
             </button>
           </span>
         </div>
       </div>
-      <div className="wishlist-button-container">
-        <button className="wishlist-button" onClick={addToWishlist}>
+      <div className={styles.wishlistButtonContainer}>
+        <button className={styles.wishlistButton} onClick={addToWishlist}>
           <img
             src="./img/icons8-heart-50 (1).png"
-            className="wishlist-heart"
+            className={styles.wishlistHeart}
             alt="heart"
           />
         </button>
