@@ -4,6 +4,7 @@ import $ from "jquery";
 import Cookies from "js-cookie";
 import axios from "axios";
 import CartWishlistProdCard from "./CartWishlistProdCard";
+import styles from "./CartPage.module.css";
 
 function WishlistPage() {
   const navigate = useNavigate();
@@ -33,7 +34,7 @@ function WishlistPage() {
   }, []);
 
   return (
-    <div className="WishlistPage-container">
+    <div className={styles.WishlistPageContainer}>
       <h1 style={{ color: "black", textAlign: "center", width: "100vw" }}>
         Your Wishlist
       </h1>

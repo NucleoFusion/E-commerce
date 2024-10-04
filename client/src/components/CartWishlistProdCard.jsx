@@ -1,14 +1,13 @@
 import React from "react";
+import styles from "./CartPage.module.css";
 
 function CartWishlistProdCard(props) {
-  console.log(props);
-
   return (
-    <div className="CartWishlistProdCard-container">
-      <div className="CartWishlistProdCard-img-container">
+    <div className={styles.CartWishlistProdCardContainer}>
+      <div className={styles.CartWishlistProdCardImgContainer}>
         <img src={props.imgSrc} />
       </div>
-      <div className="CartWishlistProdCard-details">
+      <div className={styles.CartWishlistProdCardDetails}>
         <h3>Name: {props.name}</h3>
         <h4>Price: {props.price}</h4>
         {props.type === "wishlist" ? <></> : <h4>Qty: {props.qty}</h4>}
