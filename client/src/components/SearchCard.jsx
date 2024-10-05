@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import Cookies from "js-cookie";
+import styles from "./SearchPage.module.css";
 
 export default function SearchCard(props) {
   async function addToCart() {
@@ -19,7 +20,7 @@ export default function SearchCard(props) {
     alert("Added");
   }
   return (
-    <div className="SearchCard">
+    <div className={styles.SearchCard}>
       <h1>{props.data.name}</h1>
       <h2>Price: {props.data.price}</h2>
       <p>{props.data.description}</p>

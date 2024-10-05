@@ -1,0 +1,87 @@
+.SearchPage {
+  margin: 2vw 2vh;
+
+  height: auto;
+  min-height: 85vh;
+
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 1fr;
+
+  background-color: #dee2e6;
+
+  position: relative;
+}
+
+.SearchPage > div {
+  border: solid black 1px;
+  padding: 0.75vw;
+}
+
+.SearchPage > div:first-child {
+  border-right: none;
+}
+
+.SearchPage > div > h1 {
+  text-align: center;
+}
+
+.FilterSection {
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
+.FilterSection > div {
+  height: 60vh;
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+
+  gap: 4vh;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.FilterSection > div > select {
+  max-height: 5vh;
+}
+
+.SearchCard {
+  width: 100%;
+  height: 30vh;
+  max-height: 30vh;
+  border: solid black 1px;
+
+  padding: 1vw;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+
+  margin-bottom: 2vh;
+}
+
+.SearchCard button {
+  margin: 1vh 1vw;
+
+  background-color: transparent;
+
+  border: solid black 1px;
+
+  height: 4vh;
+  min-width: 7.5vw;
+
+  border-radius: 7.5px;
+
+  transition: all 0.3s ease-in-out;
+}
+
+.SearchCard button:hover {
+  background-color: #495057;
+  color: white;
+  border: solid gray 1px;
+}

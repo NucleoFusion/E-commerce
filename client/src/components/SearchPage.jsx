@@ -6,6 +6,7 @@ import axios from "axios";
 import $ from "jquery";
 import { useParams, useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
+import styles from "./SearchPage.module.css";
 
 export default function SearchPage(props) {
   const { type } = useParams();
@@ -97,8 +98,8 @@ export default function SearchPage(props) {
   console.log(data);
 
   return (
-    <div className="SearchPage">
-      <div className="FilterSection">
+    <div className={styles.SearchPage}>
+      <div className={styles.FilterSection}>
         <h1>Filters</h1>
         <hr />
         <div>
@@ -116,7 +117,7 @@ export default function SearchPage(props) {
           />
         </div>
       </div>
-      <div className="SearchSection">
+      <div className={styles.SearchSection}>
         <h1>Search Page</h1>
         <hr />
         {data.showData.map((obj) => {
