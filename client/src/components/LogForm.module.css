@@ -1,0 +1,61 @@
+.logForm-container {
+  background-color: #708871;
+
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+  width: 50vw;
+  height: 75vh;
+
+  margin-left: 25vw;
+  margin-top: 12.5vh;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.logForm-container-element {
+  width: 100%;
+  height: 100%;
+
+  padding: 2%;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 2%;
+}
+
+.logForm-form {
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: repeat(15vh, 5);
+
+  justify-content: center;
+  align-items: center;
+}
+
+.logForm-submit {
+  align-items: center;
+  height: auto;
+  width: 75%;
+}
+
+.logForm-toggle-container {
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+
+  align-items: center;
+}
+
+.logForm-toggle {
+  margin-left: 12.5%;
+}

@@ -6,6 +6,7 @@ import axios from "axios";
 import $ from "jquery";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
+import styles from "./LogForm.module.css";
 
 function LogForm(props) {
   const [logDet, setLogDet] = useState({

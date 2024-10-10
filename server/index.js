@@ -20,7 +20,7 @@ app.use(cors());
 const pgMiddleware = (req, res, next) => {
   req.db = pool;
   next();
-};
+};  
 app.use(pgMiddleware);
 
 app.use(

@@ -1,4 +1,4 @@
-import pg from "pg";
+        import pg from "pg";
 import env from "dotenv";
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
@@ -9,7 +9,7 @@ env.config();
 
 // const uri = process.env.PG_URI;
 
-const client = new Client();
+const client = new Client({ssl: true});
 await client.connect();
 console.log("CONNECTED");
 
