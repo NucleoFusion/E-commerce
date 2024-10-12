@@ -93,40 +93,45 @@ function LogForm(props) {
         name: "Register",
       });
       $(".text-input").toggle();
-      $(".login-heading").text("Register");
-      $(".logForm-toggle").text("Login");
+      $("#Heading").text("Register");
+      $("#ToggleButton").text("Login");
       $(".logForm-input-container").attr("Login");
     } else if (data.name === "Register") {
       setLogDet({
         name: "Login",
       });
       $(".text-input").toggle();
-      $(".login-heading").text("Login");
-      $(".logForm-toggle").text("Register");
+      $("#Heading").text("Login");
+      $("#ToggleButton").text("Register");
       $(".logForm-input-container").attr("Login");
     }
   }
 
   return (
-    <div className="logForm-container">
-      <div className="logForm-container-element">
-        <form className="logForm-form">
-          <h3 className="login-heading text-center">Login</h3>
-          <TextInput className="logForm-input" name="Username" />
-          <EmailInput className="logForm-input" name="Email" />
-          <PassInput className="logForm-input" name="Password" />
-          <button
-            onClick={postLogin}
-            className="logForm-submit btn btn-primary"
+    <div className={styles.logFormContainer}>
+      <div className={styles.logFormContainerElement}>
+        <form className={styles.logFormForm}>
+          <h3
+            className={`${styles.loginHeading} ${styles.textCenter}`}
+            id="Heading"
           >
-            Submit
-          </button>
+            Login
+          </h3>
+          <TextInput className={styles.logFormInput} name="Username" />
+          <EmailInput className={styles.logFormInput} name="Email" />
+          <PassInput className={styles.logFormInput} name="Password" />
+          <div className={styles.submitDiv}>
+            <button onClick={postLogin} className={styles.logFormSubmit}>
+              Submit
+            </button>
+          </div>
         </form>
-        <div className="logForm-toggle-container">
+        <div className={styles.logFormToggleContainer}>
           <button
             onClick={setStateDet}
             name="Register"
-            className="logForm-toggle logForm-submit btn btn-primary"
+            className={`${styles.logFormToggle} ${styles.logFormSubmit}`}
+            id="ToggleButton"
           >
             Register
           </button>
