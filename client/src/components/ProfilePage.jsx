@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import $ from "jquery";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
-import HorizontalCard from "./HorizontalCard";
 import Dropdown from "./Dropdown";
 import AddressForm from "./AddressForm";
+import styles from './ProfilePage.module.css';
 
 function ProfilePage() {
   const navigate = useNavigate();
@@ -60,26 +60,34 @@ function ProfilePage() {
   }
 
   return (
-    <div className="ProfilePage-container">
-      <h2>{`Hello, ${userData.userData.username}!`}</h2>
-      <h3>{`Email: ${userData.userData.email}`}</h3>
-      <div className="ProfilePage-card-container">
-        <HorizontalCard
-          title="Wishlist"
-          srcImg="./img/icons8-heart-100.png"
-          route="/wishlist"
-          descr="At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias e"
-        />
-        <HorizontalCard
-          title="Cart"
-          srcImg="\img\icons8-shopping-cart-64.png"
-          route="/cart"
-          descr="At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias e"
-        />
+    <div className={styles.container}>
+      <div className={styles.imgCont}>
+        <img alt="profile icon"/>
       </div>
-      <div className="address-selector-container">
-        <div className="Address-para-container">
+      <div className={styles.headingCont}>
+      <h2>{`Hello, ${userData.userData.username}!`}</h2>
+      </div>
+      <div className={styles.headingCont}>
+      <h2>{`email: ${userData.userData.email}`}</h2>
+      </div>
+      <div className={styles.buttonCont}>
+        <Link to='/wishlist'>
+        <button>Wishlist</button>
+        </Link>
+        <Link to='/cart'>
+        <button>Cart</button>
+        </Link>
+      </div>
+      <div className={styles.addressSelectorCont}>
           <Dropdown arr={userData.address} func={showAddress} />
+          <button> Add Address </button>
+      </div>
+      <div className={styles.addressCont}>
+
+      </div>
+      {/* <div className="address-selector-container">
+        <div className="Address-para-container">
+          
           <p className="text-center Address-para">Select address to see</p>
         </div>
         <div className="ProfilePage-AddressForm-container span-col-2">
@@ -102,7 +110,7 @@ function ProfilePage() {
           </div>
           <AddressForm addAddress={addAddress} />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

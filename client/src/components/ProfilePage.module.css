@@ -1,0 +1,73 @@
+.container {
+    width: 95vw;
+    height: 90vh;
+    
+    margin-top: 1vh;
+    margin-left: 2.5vw;
+
+    padding: 2vh 1vw;
+
+    display: grid;
+    grid-template-columns: 25vw 66.5vw;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+
+    gap: 1vh 1vw;
+}
+
+.imgCont {
+    width: 25vw;
+    height: 100%;
+
+    grid-row: span 3;
+    grid-column: span 1;
+}
+
+.addressSelectorCont,
+.addressCont {
+    grid-row: span 3;
+}
+
+.headingCont {
+    display: grid;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.buttonCont {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.container button {
+    width: 15vw;
+    height: 5vh;
+
+    border-radius: 10px;
+}
+
+.addressSelectorCont {
+    display: grid;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.addressSelectorCont button:last-child {
+    margin-left: 5vw;
+}
+
+.addressCont {
+    border: solid black 1px;
+
+    border-radius: 10px;
+}
